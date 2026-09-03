@@ -1,0 +1,75 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profile & Settings",
+      "description": "Stores user profile data, avatars, contact details, and preferences",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "fullName": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "phoneNumber": { "type": "string" },
+        "avatarUrl": { "type": "string" },
+        "wardNumber": { "type": "string" },
+        "city": { "type": "string" },
+        "bio": { "type": "string" },
+        "occupation": { "type": "string" },
+        "emergencyContact": { "type": "string" },
+        "preferredLanguage": { "type": "string" },
+        "emailAlerts": { "type": "boolean" },
+        "smsAlerts": { "type": "boolean" },
+        "pushNotifications": { "type": "boolean" },
+        "totalPoints": { "type": "number" },
+        "badge": { "type": "string" },
+        "resolvedReportsCount": { "type": "number" },
+        "joinedDate": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "fullName", "email"]
+    },
+    "dashboardSettings": {
+      "title": "Dashboard Layout & Display Settings",
+      "description": "User specific dashboard customization options stored in Firestore",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "defaultViewMode": { "type": "string", "enum": ["grid", "list"] },
+        "defaultStatusFilter": { "type": "string" },
+        "defaultSortBy": { "type": "string", "enum": ["newest", "priority", "upvotes"] },
+        "showHeroAnimation": { "type": "boolean" },
+        "showQuickActions": { "type": "boolean" },
+        "showImpactScoreCard": { "type": "boolean" },
+        "mapStyle": { "type": "string", "enum": ["standard", "satellite", "clean"] },
+        "compactView": { "type": "boolean" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId"]
+    },
+    "reports": {
+      "title": "Civic Issue Reports",
+      "description": "Public civic problem complaints and resolution history",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "location": { "type": "string" },
+        "area": { "type": "string" },
+        "city": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "date": { "type": "string" },
+        "status": { "type": "string" },
+        "priority": { "type": "string" },
+        "department": { "type": "string" },
+        "assignedOfficer": { "type": "string" },
+        "upvotes": { "type": "number" },
+        "authorId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "title", "category", "location", "status"]
+    }
+  }
+}

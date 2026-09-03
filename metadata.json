@@ -1,0 +1,6 @@
+{
+  "name": "CIVIXA",
+  "description": "A citizen-centric grievance reporting and resolution platform where citizens photograph public issues, report problems, and track resolutions to completion.",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
